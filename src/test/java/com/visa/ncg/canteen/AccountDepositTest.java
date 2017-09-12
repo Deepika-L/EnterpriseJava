@@ -63,4 +63,19 @@ public class AccountDepositTest {
         .isZero();
   }
 
+  @Test
+  public void depositInvalidAmountResultsInException() throws  Exception {
+    Account account = new Account();
+
+    assertThatThrownBy(() -> { account.deposit(-1); })
+            .isInstanceOf(InvalidDepositException.class);
+  }
+
+  @Test
+  public void withdralNegativeAmountThowsException() throws Exception {
+    Account account = new Account();
+    assertThatThrownBy(() -> {account.withdraw(-1);})
+            .isInstanceOf(NegativeWithdralException.class);
+
+  }
 }
