@@ -2,18 +2,32 @@ package com.visa.ncg.canteen;
 
 public class Account {
   private int balance;
+  private long id;
 
   public Account(int initialAmount) {
+    id=-1;
     balance = initialAmount;
   }
 
   public Account() {
     balance = 0;
+    id=-1;
   }
 
-  public int balance() {
+  public int getBalance() {
     return balance;
   }
+
+  public void setBalance(int balance){
+    this.balance = balance;
+  }
+    public void setId(long id) {
+      this.id = id;
+    }
+    public long getId() {
+      return id;
+    }
+
 
   public void deposit(int amount) {
     if(amount<0) {
