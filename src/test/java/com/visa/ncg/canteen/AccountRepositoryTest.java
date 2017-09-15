@@ -18,7 +18,7 @@ public class AccountRepositoryTest {
         a2.setId(2L);
         accounts.add(a1);
         accounts.add(a2);
-        AccountRepository repo = new AccountRepository(accounts);
+        InMemAccountRepository repo = new InMemAccountRepository(accounts);
         assertThat(repo.findAll())
                 .hasSize(2);
     }
@@ -34,15 +34,15 @@ public class AccountRepositoryTest {
         accounts.add(a1);
         accounts.add(a2);
 
-        AccountRepository repo = new AccountRepository(accounts);
+        InMemAccountRepository repo = new InMemAccountRepository(accounts);
         assertThat(repo.findOne(1L).getId()).isEqualTo(a1.getId());
     }
 
     @Test
     public void saveAddsAccountToRepo() {
         Account a1 = new Account();
-        AccountRepository repo = new AccountRepository();
+        InMemAccountRepository repo = new InMemAccountRepository();
         assertThat(repo.save(a1)
-                .getId()).isEqualTo(0);
+                .getId()).isEqualTo(1);
     }
 }

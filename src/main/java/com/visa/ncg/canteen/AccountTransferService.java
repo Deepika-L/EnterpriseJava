@@ -14,12 +14,11 @@ public class AccountTransferService {
         if (amount <= 0) {
             throw new InvalidAmountException();
         }
-
         if(source.getBalance() < amount){
             throw new InsufficientFundsException();
         }
 
-        source.setBalance(source.getBalance() - amount);
-        destination.setBalance(destination.getBalance() + amount);
+        source.withdraw(amount);
+        destination.deposit(amount);
     }
 }

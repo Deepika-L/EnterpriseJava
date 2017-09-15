@@ -3,6 +3,7 @@ package com.visa.ncg.canteen;
 public class AccountResponse {
     private long id;
     private int balance;
+    private String name;
 
     public AccountResponse(){};
 
@@ -21,4 +22,8 @@ public class AccountResponse {
     public int getBalance(){
         return balance;
     }
+
+    public void setName(String name) {this.name = name;}
+
+    public String getName() {return name;}
 }
