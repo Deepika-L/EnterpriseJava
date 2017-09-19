@@ -11,7 +11,7 @@ public class AccountDepositTest {
   public void newAccountsHaveZeroBalance() throws Exception {
     Account account = new Account();
 
-    assertThat(account.balance())
+    assertThat(account.getBalance())
         .isZero();
   }
 
@@ -21,7 +21,7 @@ public class AccountDepositTest {
 
     account.deposit(10);
 
-    assertThat(account.balance())
+    assertThat(account.getBalance())
         .isEqualTo(10);
   }
 
@@ -31,7 +31,7 @@ public class AccountDepositTest {
 
     account.deposit(5);
 
-    assertThat(account.balance())
+    assertThat(account.getBalance())
         .isEqualTo(15);
   }
 
@@ -41,7 +41,7 @@ public class AccountDepositTest {
 
     account.withdraw(3);
 
-    assertThat(account.balance())
+    assertThat(account.getBalance())
         .isEqualTo(4);
   }
 
@@ -59,7 +59,7 @@ public class AccountDepositTest {
 
     account.withdraw(9);
 
-    assertThat(account.balance())
+    assertThat(account.getBalance())
         .isZero();
   }
 
@@ -78,4 +78,6 @@ public class AccountDepositTest {
             .isInstanceOf(NegativeWithdralException.class);
 
   }
+
+
 }
