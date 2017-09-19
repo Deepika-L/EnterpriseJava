@@ -7,5 +7,5 @@ Canteen gift card project for the Visa NCG Enterprise Java course in Foster City
 Add your name...
 
 * Ted M. Young
-
+* Deepika Lakshmanan
 
